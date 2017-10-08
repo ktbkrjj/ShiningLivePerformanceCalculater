@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.example.kenju.shiningliveperformancecalculater.MainActivity">
 
-    <ListView
+    <com.example.kenju.shiningliveperformancecalculater.SortableListView
         android:id="@+id/bromideListView"
         android:layout_width="wrap_content"
         android:layout_height="320dp"
