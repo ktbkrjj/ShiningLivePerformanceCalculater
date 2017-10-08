@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ShiningLivePerformanceCalculater</string>
+    <string name="textSongAttribute">曲の属性</string>
+    <string name="textMainSkill">メインスキル</string>
+    <string name="textFriendSkill">フレンドスキル</string>
+    <string name="textEventBonus">イベント</string>
 </resources>
