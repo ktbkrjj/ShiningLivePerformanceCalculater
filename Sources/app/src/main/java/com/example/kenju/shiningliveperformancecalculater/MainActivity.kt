@@ -1,11 +1,13 @@
 package com.example.kenju.shiningliveperformancecalculater
 
+import android.content.Context
+import android.graphics.BitmapFactory
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ListAdapter
-import android.widget.SimpleAdapter
-import android.widget.TextView
-import android.widget.Toast
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -14,26 +16,63 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val names = listOf(
+                "寿 嶺二",
+                "黒崎蘭丸",
+                "美風 藍",
+                "カミュ",
+                "一十木音也")
+        val images = listOf(
+                R.drawable.dream,
+                R.drawable.dream,
+                R.drawable.shine,
+                R.drawable.shine,
+                R.drawable.star)
+        val star = listOf("100", "200", "300", "400", "500")
+        val shine = listOf("100", "200", "300", "400", "500")
+        val dream = listOf("100", "200", "300", "400", "500")
 
-        val list = mutableListOf<Map<String, String>>()
-        for (i in 0..20) {
-            list.add(mapOf("title" to "title $i", "detail" to "detail $i"))
+        val flowers = mutableListOf<BromideData>()
+        for (i in 0..names.count()-1) {
+            flowers.add(BromideData(names[i], images[i], star[i], shine[i], dream[i]))
         }
 
-        val adapter = SimpleAdapter(
-                this, // Context
-                list, // 表示したいデータリスト
-                android.R.layout.simple_list_item_2, // レイアウトファイルのID
-                arrayOf("title", "detail"), // from: 表示したデータのMapのキー名
-                intArrayOf(android.R.id.text1, android.R.id.text2) // to: レイアウトファイルに定義されているアイテムのID
-        )
-        bromideListView.adapter = adapter as ListAdapter
+        val adapter = BromideAdapter(this, flowers)
+        bromideListView.adapter = adapter
 
-        bromideListView.setOnItemClickListener { parent, view, position, id ->
-            val title = view.findViewById<TextView>(android.R.id.text1)
-            val detail = view.findViewById<TextView>(android.R.id.text2)
-            Toast.makeText(this, "${title.text} (${detail.text})", Toast.LENGTH_SHORT).show()
+    }
+
+    data class ViewHolder(val nameTextView: TextView, val attributeImageView: ImageView, val starTextView: TextView, val shineTextView: TextView, val dreamTextView: TextView)
+
+    class BromideAdapter(context: Context, flowers: List<BromideData>) : ArrayAdapter<BromideData>(context, 0, flowers) {
+        val layoutInflater: LayoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+
+        override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+            var view = convertView
+            var holder: ViewHolder
+
+            if (view == null) {
+                view = layoutInflater.inflate(R.layout.listview_item, parent, false)
+                holder = ViewHolder(
+                        view?.findViewById<TextView>(R.id.itemName) as TextView,
+                        view?.findViewById<ImageView>(R.id.itemImageAttribute) as ImageView,
+                        view?.findViewById<TextView>(R.id.itemStarValue) as TextView,
+                        view?.findViewById<TextView>(R.id.itemShineValue) as TextView,
+                        view?.findViewById<TextView>(R.id.itemDreamValue) as TextView
+                )
+                view?.tag = holder
+            } else {
+                holder = view?.tag as ViewHolder
+            }
+
+            val item = getItem(position) as BromideData
+            holder.nameTextView.text = item.name
+            holder.attributeImageView.setImageBitmap(BitmapFactory.decodeResource(context.resources, item.imageId))
+            holder.starTextView.text = item.star
+            holder.shineTextView.text = item.shine
+            holder.dreamTextView.text = item.dream
+
+            return view!!
         }
-
     }
 }

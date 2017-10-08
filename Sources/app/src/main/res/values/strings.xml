@@ -4,4 +4,9 @@
     <string name="textMainSkill">メインスキル</string>
     <string name="textFriendSkill">フレンドスキル</string>
     <string name="textEventBonus">イベント</string>
+    <string name="itemName">Shining Idol</string>
+    <string name="itemStarValue">0</string>
+    <string name="itemShineValue">0</string>
+    <string name="itemDreamValue">0</string>
+
 </resources>
