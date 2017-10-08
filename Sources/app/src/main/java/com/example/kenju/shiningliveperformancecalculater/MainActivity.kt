@@ -21,20 +21,34 @@ class MainActivity : AppCompatActivity() {
                 "黒崎蘭丸",
                 "美風 藍",
                 "カミュ",
-                "一十木音也")
+                "一十木音也",
+                "聖川真斗",
+                "四ノ宮那月",
+                "一ノ瀬トキヤ",
+                "神宮寺レン",
+                "来栖翔",
+                "愛島セシル"
+        )
         val images = listOf(
                 R.drawable.dream,
                 R.drawable.dream,
                 R.drawable.shine,
                 R.drawable.shine,
-                R.drawable.star)
-        val star = listOf("100", "200", "300", "400", "500")
-        val shine = listOf("100", "200", "300", "400", "500")
-        val dream = listOf("100", "200", "300", "400", "500")
+                R.drawable.star,
+                R.drawable.shine,
+                R.drawable.dream,
+                R.drawable.star,
+                R.drawable.star,
+                R.drawable.star,
+                R.drawable.shine
+                )
+        val star = listOf(100, 200, 300, 400, 500, 200, 400, 100, 300, 100, 400)
+        val shine = listOf(100, 200, 300, 400, 500, 200, 100, 100, 200, 400, 100)
+        val dream = listOf(100, 200, 300, 400, 500, 500, 300, 100, 200, 400, 500)
 
         val flowers = mutableListOf<BromideData>()
         for (i in 0..names.count()-1) {
-            flowers.add(BromideData(names[i], images[i], star[i], shine[i], dream[i]))
+            flowers.add(BromideData(names[i], images[i], star[i].toString(), shine[i].toString(), dream[i].toString()))
         }
 
         val adapter = BromideAdapter(this, flowers)
