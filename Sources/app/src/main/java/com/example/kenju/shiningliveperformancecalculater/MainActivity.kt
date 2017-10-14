@@ -48,7 +48,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun calcurate() {
-        valueTotal.setText(Calucurater(preset).getTotalValue().toString())
+        valueTotal.setText(Calucurater(preset, songAttribute()).getTotalValue().toString())
+    }
+
+    private fun songAttribute() :Attribute {
+        when (groupSongAttribute_?.checkedRadioButtonId) {
+            R.id.button1SongAttribute -> return Attribute.Star
+            R.id.button2SongAttribute -> return Attribute.Shine
+            R.id.button3SongAttribute -> return Attribute.Dream
+            else -> return Attribute.None
+        }
     }
 
     internal inner class DragListener : SortableListView.SimpleDragListener() {

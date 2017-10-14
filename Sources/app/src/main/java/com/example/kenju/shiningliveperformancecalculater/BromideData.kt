@@ -1,7 +1,7 @@
 package com.example.kenju.shiningliveperformancecalculater
 
 enum class Attribute {
-    Star, Shine, Dream
+    None, Star, Shine, Dream
 }
 
 data class BromideData(val name: String, val attribute: Attribute, val star: Int, val shine: Int,val dream: Int) {
@@ -9,5 +9,6 @@ data class BromideData(val name: String, val attribute: Attribute, val star: Int
         Attribute.Star  -> R.drawable.star
         Attribute.Shine -> R.drawable.shine
         Attribute.Dream -> R.drawable.dream
+        Attribute.None  -> R.drawable.star
     }
 }

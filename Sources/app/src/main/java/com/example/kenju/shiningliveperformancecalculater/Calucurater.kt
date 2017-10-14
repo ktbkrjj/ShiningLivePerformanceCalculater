@@ -1,12 +1,15 @@
 package com.example.kenju.shiningliveperformancecalculater
 
-class Calucurater(val bromides_: MutableList<BromideData>) {
-    fun getTotalValue() : Int {
+class Calucurater(val bromides_: MutableList<BromideData>, val songAttribute: Attribute) {
+    fun getTotalValue(): Int {
         var total = 0
-        for(index in 1..6) {
-            if (bromides_.count() > index) {
-                total += bromides_[index].star + bromides_[index].shine + bromides_[index].dream
+        val unit = bromides_.take(6)
+        for (bromide in unit) {
+            var score = (bromide.star + bromide.shine + bromide.dream).toDouble()
+            if (bromide.attribute == songAttribute) {
+                score *= 1.3
             }
+            total += score.toInt()
         }
         return total
     }
