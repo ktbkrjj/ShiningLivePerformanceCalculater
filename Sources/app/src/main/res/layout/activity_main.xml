@@ -6,13 +6,195 @@
     android:layout_height="match_parent"
     tools:context="com.example.kenju.shiningliveperformancecalculater.MainActivity">
 
-    <TextView
+    <TableLayout
+        android:id="@+id/tableParameter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textSongAttribute"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/textSongAttribute"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RadioGroup
+                android:id="@+id/groupSongAttribute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toRightOf="@+id/textSongAttribute">
+
+                <RadioButton
+                    android:id="@+id/button1SongAttribute"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/textStar" />
+
+                <RadioButton
+                    android:id="@+id/button2SongAttribute"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/textShine" />
+
+                <RadioButton
+                    android:id="@+id/button3SongAttribute"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/textDream" />
+            </RadioGroup>
+        </TableRow>
+
+        <TableRow>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textEventBonus"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/textEventBonus"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textSongAttribute" />
+
+            <RadioGroup
+                android:id="@+id/groupEventBonus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toRightOf="@+id/textEventBonus">
+
+                <RadioButton
+                    android:id="@+id/button1EventBonus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/textDance" />
+
+                <RadioButton
+                    android:id="@+id/button2EventBonus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/textVocal" />
+
+                <RadioButton
+                    android:id="@+id/button3EventBonus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/textAct" />
+            </RadioGroup>
+        </TableRow>
+
+        <TableRow>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textSkill"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/textSkill"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textEventBonus" />
+
+            <RadioGroup
+                android:id="@+id/groupSkill1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toRightOf="@+id/textSkill">
+
+                <RadioButton
+                    android:id="@+id/button1Skill1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/textStar" />
+
+                <RadioButton
+                    android:id="@+id/button2Skill1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/textShine" />
+
+                <RadioButton
+                    android:id="@+id/button3Skill1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/textDream" />
+            </RadioGroup>
+        </TableRow>
+
+        <TableRow>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioGroup
+                android:id="@+id/groupSkill2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toRightOf="@+id/textSkill">
+
+                <RadioButton
+                    android:id="@+id/button1Skill2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/textDance" />
+
+                <RadioButton
+                    android:id="@+id/button2Skill2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/textVocal" />
+
+                <RadioButton
+                    android:id="@+id/button3Skill2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/textAct" />
+            </RadioGroup>
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/textTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/textTotal"
+        android:textSize="30sp"
+        app:layout_constraintTop_toBottomOf="@+id/tableParameter"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/valueTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/valueTotal"
+        android:textSize="30sp"
+        app:layout_constraintTop_toBottomOf="@+id/tableParameter"
+        app:layout_constraintLeft_toRightOf="@+id/textTotal"
+        />
+    <com.example.kenju.shiningliveperformancecalculater.SortableListView
+        android:id="@+id/bromideListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/textTotal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 </android.support.constraint.ConstraintLayout>
