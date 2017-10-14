@@ -32,15 +32,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        listView_ = findViewById(R.id.bromideListView) as SortableListView
+        listView_ = bromideListView as SortableListView
         listView_?.setDragListener(DragListener())
         listView_?.sortable = true
         listView_?.adapter = BromideAdapter(this, preset)
 
-        groupSongAttribute_ = findViewById(R.id.groupSongAttribute) as RadioGroup
-        groupEventBonus_ = findViewById(R.id.groupEventBonus) as RadioGroup
-        groupSkillAttibute_ = findViewById(R.id.groupSkill1) as RadioGroup
-        groupSkillAbility_ = findViewById(R.id.groupSkill2) as RadioGroup
+        groupSongAttribute_ = groupSongAttribute as RadioGroup
+        groupEventBonus_ = groupEventBonus as RadioGroup
+        groupSkillAttibute_ = groupSkill1 as RadioGroup
+        groupSkillAbility_ = groupSkill2 as RadioGroup
         groupSongAttribute_?.setOnCheckedChangeListener{group, clickedId -> calcurate()}
         groupEventBonus_?.setOnCheckedChangeListener{group, clickedId -> calcurate()}
         groupSkillAttibute_?.setOnCheckedChangeListener{group, clickedId -> calcurate()}
