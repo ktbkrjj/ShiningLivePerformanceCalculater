@@ -2,7 +2,9 @@ package com.example.kenju.shiningliveperformancecalculater
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
+import android.widget.RadioGroup
+import kotlinx.android.synthetic.main.activity_main.*
+
 
 private var preset = mutableListOf(
         BromideData("寿 嶺二",      R.drawable.star,  100, 400, 400),
@@ -21,6 +23,10 @@ private var preset = mutableListOf(
 class MainActivity : AppCompatActivity() {
 
     var listView_: SortableListView? = null
+    var groupSongAttribute_ : RadioGroup? = null
+    var groupEventBonus_ : RadioGroup? = null
+    var groupSkillAttibute_ : RadioGroup? = null
+    var groupSkillAbility_ : RadioGroup? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +36,15 @@ class MainActivity : AppCompatActivity() {
         listView_?.setDragListener(DragListener())
         listView_?.sortable = true
         listView_?.adapter = BromideAdapter(this, preset)
+
+        groupSongAttribute_ = findViewById(R.id.groupSongAttribute) as RadioGroup
+        groupEventBonus_ = findViewById(R.id.groupEventBonus) as RadioGroup
+        groupSkillAttibute_ = findViewById(R.id.groupSkill1) as RadioGroup
+        groupSkillAbility_ = findViewById(R.id.groupSkill2) as RadioGroup
+        groupSongAttribute_?.setOnCheckedChangeListener{group, clickedId -> calcurate()}
+        groupEventBonus_?.setOnCheckedChangeListener{group, clickedId -> calcurate()}
+        groupSkillAttibute_?.setOnCheckedChangeListener{group, clickedId -> calcurate()}
+        groupSkillAbility_?.setOnCheckedChangeListener{group, clickedId -> calcurate()}
     }
 
     fun calcurate() {
