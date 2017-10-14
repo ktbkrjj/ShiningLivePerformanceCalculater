@@ -1,3 +1,13 @@
 package com.example.kenju.shiningliveperformancecalculater
 
-data class BromideData(val name: String, val imageId: Int, val star: Int, val shine: Int,val dream: Int)
+enum class Attribute {
+    Star, Shine, Dream
+}
+
+data class BromideData(val name: String, val attribute: Attribute, val star: Int, val shine: Int,val dream: Int) {
+    val imageId = when (attribute) {
+        Attribute.Star  -> R.drawable.star
+        Attribute.Shine -> R.drawable.shine
+        Attribute.Dream -> R.drawable.dream
+    }
+}
