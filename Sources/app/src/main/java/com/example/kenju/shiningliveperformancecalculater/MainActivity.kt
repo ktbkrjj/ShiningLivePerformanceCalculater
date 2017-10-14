@@ -1,17 +1,8 @@
 package com.example.kenju.shiningliveperformancecalculater
 
-import android.content.Context
-import android.content.SearchRecentSuggestionsProvider
-import android.graphics.BitmapFactory
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.*
-import kotlinx.android.synthetic.main.activity_main.*
 import android.widget.TextView
-import android.widget.BaseAdapter
 
 private var preset = mutableListOf(
         BromideData("寿 嶺二",      R.drawable.star,  100, 400, 400),
