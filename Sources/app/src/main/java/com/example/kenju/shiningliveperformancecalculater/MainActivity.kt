@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun calcurate() {
-        valueTotal.setText(Calucurater(preset, songAttribute(), eventBonus()).getTotalValue().toString())
+        valueTotal.setText(Calucurater(preset, songAttribute(), eventBonus(), skillAttribute(), skillAbility()).getTotalValue().toString())
     }
 
     private fun songAttribute() :Attribute {
@@ -65,6 +65,24 @@ class MainActivity : AppCompatActivity() {
             R.id.button1EventBonus-> return Ability.Dance
             R.id.button2EventBonus -> return Ability.Vocal
             R.id.button3EventBonus -> return Ability.Act
+            else -> return Ability.None
+        }
+    }
+
+    private fun skillAttribute() :Attribute {
+        when (groupSkillAttibute_?.checkedRadioButtonId) {
+            R.id.button1Skill1-> return Attribute.Star
+            R.id.button2Skill1 -> return Attribute.Shine
+            R.id.button3Skill1 -> return Attribute.Dream
+            else -> return Attribute.None
+        }
+    }
+
+    private fun skillAbility() :Ability {
+        when (groupSkillAbility_?.checkedRadioButtonId) {
+            R.id.button1Skill2 -> return Ability.Dance
+            R.id.button2Skill2 -> return Ability.Vocal
+            R.id.button3Skill2 -> return Ability.Act
             else -> return Ability.None
         }
     }
