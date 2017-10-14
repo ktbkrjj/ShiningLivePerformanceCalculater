@@ -29,24 +29,24 @@ private var preset = mutableListOf(
 
 class MainActivity : AppCompatActivity() {
 
-    var mListView: SortableListView? = null
+    var listView_: SortableListView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        mListView = findViewById(R.id.bromideListView) as SortableListView
-        mListView?.setDragListener(DragListener())
-        mListView?.sortable = true
-        mListView?.adapter = BromideAdapter(this, preset)
+        listView_ = findViewById(R.id.bromideListView) as SortableListView
+        listView_?.setDragListener(DragListener())
+        listView_?.sortable = true
+        listView_?.adapter = BromideAdapter(this, preset)
     }
 
     internal inner class DragListener : SortableListView.SimpleDragListener() {
-        var mDraggingPosition = -1
+        var draggingPos_ = -1
 
         override fun onStartDrag(position: Int): Int {
-            mDraggingPosition = position
-            mListView?.invalidateViews()
+            draggingPos_ = position
+            listView_?.invalidateViews()
             return position
         }
 
@@ -72,14 +72,14 @@ class MainActivity : AppCompatActivity() {
                 preset[positionTo] = data
             }
 
-            mDraggingPosition = positionTo
-            mListView?.invalidateViews()
+            draggingPos_ = positionTo
+            listView_?.invalidateViews()
             return positionTo
         }
 
         override fun onStopDrag(positionFrom: Int, positionTo: Int): Boolean {
-            mDraggingPosition = -1
-            mListView?.invalidateViews()
+            draggingPos_ = -1
+            listView_?.invalidateViews()
             return super.onStopDrag(positionFrom, positionTo)
         }
     }
