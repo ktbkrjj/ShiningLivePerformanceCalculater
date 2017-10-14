@@ -14,44 +14,148 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
-    <TextView
-        android:id="@+id/textSongAttribute"
+    <TableLayout
+        android:id="@+id/tableParameter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/textSongAttribute"
-        android:layout_marginTop="8dp"
-        android:layout_marginLeft="16dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
-
-    <TextView
-        android:id="@+id/textMainSkill"
+        >
+    <TableRow
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/textMainSkill"
-        android:layout_marginTop="8dp"
-        android:layout_marginLeft="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/textSongAttribute"
-        app:layout_constraintLeft_toLeftOf="parent" />
-
-    <TextView
-        android:id="@+id/textFriendSkill"
+        >
+        <TextView
+            android:id="@+id/textSongAttribute"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/textSongAttribute"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="16dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent" />
+        <RadioGroup
+            android:id="@+id/groupSongAttribute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toRightOf="@+id/textSongAttribute"
+            >
+            <RadioButton
+                android:id="@+id/button1SongAttribute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/textStar" />
+            <RadioButton
+                android:id="@+id/button2SongAttribute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/textShine" />
+            <RadioButton
+                android:id="@+id/button3SongAttribute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/textDream" />
+        </RadioGroup>
+    </TableRow>
+    <TableRow>
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/textFriendSkill"
-        android:layout_marginTop="8dp"
-        android:layout_marginLeft="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/textMainSkill"
-        app:layout_constraintLeft_toLeftOf="parent" />
-
+        android:layout_height="wrap_content">
     <TextView
         android:id="@+id/textEventBonus"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:text="@string/textEventBonus"
         android:layout_marginTop="8dp"
         android:layout_marginLeft="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/textFriendSkill"
+        app:layout_constraintTop_toBottomOf="@+id/textSongAttribute"
         app:layout_constraintLeft_toLeftOf="parent" />
-
+        <RadioGroup
+            android:id="@+id/groupEventBonus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toRightOf="@+id/textEventBonus"
+            >
+            <RadioButton
+                android:id="@+id/button1EventBonus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/textDance" />
+            <RadioButton
+                android:id="@+id/button2EventBonus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/textVocal" />
+            <RadioButton
+                android:id="@+id/button3EventBonus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/textAct" />
+        </RadioGroup>
+    </TableRow>
+    <TableRow>
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/textSkill"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="@string/textSkill"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/textEventBonus"
+        app:layout_constraintLeft_toLeftOf="parent" />
+        <RadioGroup
+            android:id="@+id/groupSkill1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toRightOf="@+id/textSkill"
+            >
+            <RadioButton
+                android:id="@+id/button1Skill1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/textStar" />
+            <RadioButton
+                android:id="@+id/button2Skill1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/textShine" />
+            <RadioButton
+                android:id="@+id/button3Skill1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/textDream" />
+        </RadioGroup>
+    </TableRow>
+    <TableRow>
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+        <RadioGroup
+            android:layout_column="1"
+            android:id="@+id/groupSkill2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toRightOf="@+id/textSkill"
+            >
+            <RadioButton
+                android:id="@+id/button1Skill2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/textDance" />
+            <RadioButton
+                android:id="@+id/button2Skill2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/textVocal" />
+            <RadioButton
+                android:id="@+id/button3Skill2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/textAct" />
+        </RadioGroup>
+    </TableRow>
+</TableLayout>
+    
 </android.support.constraint.ConstraintLayout>

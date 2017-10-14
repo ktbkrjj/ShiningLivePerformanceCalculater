@@ -1,9 +1,14 @@
 <resources>
     <string name="app_name">ShiningLivePerformanceCalculater</string>
     <string name="textSongAttribute">曲の属性</string>
-    <string name="textMainSkill">メインスキル</string>
-    <string name="textFriendSkill">フレンドスキル</string>
-    <string name="textEventBonus">イベント</string>
+    <string name="textEventBonus">ｲﾍﾞﾝﾄﾎﾞｰﾅｽ</string>
+    <string name="textSkill">ﾒｲﾝ/ﾌﾚﾝﾄﾞｽｷﾙ</string>
+    <string name="textStar">スター</string>
+    <string name="textShine">シャイン</string>
+    <string name="textDream">ドリーム</string>
+    <string name="textDance">Dance</string>
+    <string name="textVocal">Vocal</string>
+    <string name="textAct">Act</string>
     <string name="itemName">Shining Idol</string>
     <string name="itemStarValue">0</string>
     <string name="itemShineValue">0</string>
