@@ -32,6 +32,11 @@ class MainActivity : AppCompatActivity() {
         listView_?.adapter = BromideAdapter(this, preset)
     }
 
+    fun calcurate() {
+        var total = findViewById(R.id.valueTotal) as TextView
+        total.setText(Calucurater(preset).getTotalValue().toString())
+    }
+
     internal inner class DragListener : SortableListView.SimpleDragListener() {
         var draggingPos_ = -1
 
@@ -71,6 +76,7 @@ class MainActivity : AppCompatActivity() {
         override fun onStopDrag(positionFrom: Int, positionTo: Int): Boolean {
             draggingPos_ = -1
             listView_?.invalidateViews()
+            calcurate()
             return super.onStopDrag(positionFrom, positionTo)
         }
     }
