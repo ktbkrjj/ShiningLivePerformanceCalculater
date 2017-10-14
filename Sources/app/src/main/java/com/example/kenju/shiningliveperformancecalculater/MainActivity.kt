@@ -33,8 +33,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun calcurate() {
-        var total = findViewById(R.id.valueTotal) as TextView
-        total.setText(Calucurater(preset).getTotalValue().toString())
+        valueTotal.setText(Calucurater(preset).getTotalValue().toString())
     }
 
     internal inner class DragListener : SortableListView.SimpleDragListener() {
