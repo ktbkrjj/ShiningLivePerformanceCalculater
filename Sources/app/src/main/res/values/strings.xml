@@ -12,8 +12,6 @@
     <string name="textTotal">累計ﾊﾟﾌｫｰﾏﾝｽ</string>
     <string name="valueTotal">0</string>
     <string name="itemName">Shining Idol</string>
-    <string name="itemStarValue">0</string>
-    <string name="itemShineValue">0</string>
-    <string name="itemDreamValue">0</string>
+    <string name="valueInit">0</string>
 
 </resources>
