@@ -23,9 +23,9 @@ class BromideAdapter(context: Context, items: List<BromideData>) : ArrayAdapter<
             holder = ViewHolder(
                     view.findViewById<TextView>(R.id.itemName) as TextView,
                     view.findViewById<ImageView>(R.id.itemImageAttribute) as ImageView,
-                    view.findViewById<TextView>(R.id.itemStarValue) as TextView,
-                    view.findViewById<TextView>(R.id.itemShineValue) as TextView,
-                    view.findViewById<TextView>(R.id.itemDreamValue) as TextView
+                    view.findViewById<TextView>(R.id.itemDanceValue) as TextView,
+                    view.findViewById<TextView>(R.id.itemVocalValue) as TextView,
+                    view.findViewById<TextView>(R.id.itemVocalValue) as TextView
             )
             view.tag = holder
         } else {
@@ -35,9 +35,9 @@ class BromideAdapter(context: Context, items: List<BromideData>) : ArrayAdapter<
         val item = getItem(position) as BromideData
         holder.nameTextView.text = item.name
         holder.attributeImageView.setImageBitmap(BitmapFactory.decodeResource(context.resources, item.imageId))
-        holder.starTextView.text = item.star.toString()
-        holder.shineTextView.text = item.shine.toString()
-        holder.dreamTextView.text = item.dream.toString()
+        holder.starTextView.text = item.dance.toString()
+        holder.shineTextView.text = item.vocal.toString()
+        holder.dreamTextView.text = item.act.toString()
 
         return view!!
     }

@@ -11,7 +11,7 @@
         android:id="@+id/itemImageAttribute"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         app:srcCompat="@mipmap/ic_launcher_round"
         app:layout_constraintLeft_toLeftOf="parent" />
 
@@ -19,72 +19,73 @@
         android:id="@+id/itemName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
         android:text="@string/itemName"
-        android:textSize="20dp"
+        android:textSize="20sp"
         app:layout_constraintLeft_toRightOf="@+id/itemImageAttribute"
         app:layout_constraintTop_toTopOf="@+id/itemImageAttribute" />
 
-    <ImageView
-        android:id="@+id/imageStar"
-        android:layout_width="10dp"
-        android:layout_height="10dp"
+    <TextView
+        android:id="@+id/imageDance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
-        android:layout_marginLeft="8dp"
-        app:srcCompat="@drawable/star"
+        android:layout_marginStart="8dp"
+        android:text="@string/textDance"
+        android:textSize="12sp"
         app:layout_constraintLeft_toRightOf="@+id/itemImageAttribute"
         app:layout_constraintTop_toBottomOf="@+id/itemName" />
 
     <TextView
-        android:id="@+id/itemStarValue"
+        android:id="@+id/itemDanceValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
-        android:layout_marginLeft="8dp"
-        android:text="@string/itemStarValue"
+        android:layout_marginStart="8dp"
+        android:text="@string/valueInit"
         app:layout_constraintTop_toBottomOf="@+id/itemName"
-        app:layout_constraintLeft_toRightOf="@+id/imageStar" />
-
-    <ImageView
-        android:id="@+id/imageShine"
-        android:layout_width="10dp"
-        android:layout_height="10dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginLeft="8dp"
-        android:text="@string/itemStarValue"
-        app:srcCompat="@drawable/shine"
-        app:layout_constraintTop_toBottomOf="@+id/itemName"
-        app:layout_constraintLeft_toRightOf="@+id/itemStarValue" />
+        app:layout_constraintLeft_toRightOf="@+id/imageDance" />
 
     <TextView
-        android:id="@+id/itemShineValue"
+        android:id="@+id/imageVocal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
-        android:layout_marginLeft="8dp"
-        android:text="@string/itemShineValue"
+        android:layout_marginStart="8dp"
+        android:text="@string/textVocal"
+        android:textSize="12sp"
         app:layout_constraintTop_toBottomOf="@+id/itemName"
-        app:layout_constraintLeft_toRightOf="@+id/imageShine" />
-
-    <ImageView
-        android:id="@+id/imageDream"
-        android:layout_width="10dp"
-        android:layout_height="10dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginLeft="8dp"
-        android:text="@string/itemStarValue"
-        app:srcCompat="@drawable/dream"
-        app:layout_constraintTop_toBottomOf="@+id/itemName"
-        app:layout_constraintLeft_toRightOf="@+id/itemShineValue" />
+        app:layout_constraintLeft_toRightOf="@+id/itemDanceValue" />
 
     <TextView
-        android:id="@+id/itemDreamValue"
+        android:id="@+id/itemVocalValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/valueInit"
+        app:layout_constraintTop_toBottomOf="@+id/itemName"
+        app:layout_constraintLeft_toRightOf="@+id/imageVocal" />
+
+    <TextView
+        android:id="@+id/imageAct"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
         android:layout_marginLeft="8dp"
-        android:text="@string/itemDreamValue"
+        android:text="@string/textAct"
+        android:textSize="12sp"
         app:layout_constraintTop_toBottomOf="@+id/itemName"
-        app:layout_constraintLeft_toRightOf="@+id/imageDream" />
+        app:layout_constraintLeft_toRightOf="@+id/itemVocalValue" />
+
+    <TextView
+        android:id="@+id/itemActValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/valueInit"
+        app:layout_constraintTop_toBottomOf="@+id/itemName"
+        app:layout_constraintLeft_toRightOf="@+id/imageAct" />
 
 </android.support.constraint.ConstraintLayout>

@@ -4,7 +4,7 @@ enum class Attribute {
     None, Star, Shine, Dream
 }
 
-data class BromideData(val name: String, val attribute: Attribute, val star: Int, val shine: Int,val dream: Int) {
+data class BromideData(val name: String, val attribute: Attribute, val dance: Int, val vocal: Int,val act: Int) {
     val imageId = when (attribute) {
         Attribute.Star  -> R.drawable.star
         Attribute.Shine -> R.drawable.shine
