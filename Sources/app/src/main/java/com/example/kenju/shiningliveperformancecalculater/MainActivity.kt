@@ -13,23 +13,21 @@ import kotlinx.android.synthetic.main.activity_main.*
 import android.widget.TextView
 import android.widget.BaseAdapter
 
-
+private var preset = mutableListOf(
+        BromideData("寿 嶺二",      R.drawable.star,  100, 400, 400),
+        BromideData("黒崎蘭丸",     R.drawable.shine, 200, 300, 400),
+        BromideData("美風 藍",      R.drawable.dream, 300, 200, 400),
+        BromideData("カミュ",       R.drawable.star,  400, 100, 500),
+        BromideData("一十木音也",   R.drawable.star,  200, 100, 200),
+        BromideData("聖川真斗",     R.drawable.shine, 500, 100, 200),
+        BromideData("四ノ宮那月",   R.drawable.shine, 300, 100, 200),
+        BromideData("一ノ瀬トキヤ", R.drawable.dream, 400, 400, 100),
+        BromideData("神宮寺レン",   R.drawable.dream, 200, 500, 100),
+        BromideData("来栖翔",       R.drawable.shine, 100, 200, 500),
+        BromideData("愛島セシル",   R.drawable.star,  500, 300, 400)
+)
 
 class MainActivity : AppCompatActivity() {
-
-    private var preset = mutableListOf(
-            BromideData("寿 嶺二",      R.drawable.star,  100, 400, 400),
-            BromideData("黒崎蘭丸",     R.drawable.shine, 200, 300, 400),
-            BromideData("美風 藍",      R.drawable.dream, 300, 200, 400),
-            BromideData("カミュ",       R.drawable.star,  400, 100, 500),
-            BromideData("一十木音也",   R.drawable.star,  200, 100, 200),
-            BromideData("聖川真斗",     R.drawable.shine, 500, 100, 200),
-            BromideData("四ノ宮那月",   R.drawable.shine, 300, 100, 200),
-            BromideData("一ノ瀬トキヤ", R.drawable.dream, 400, 400, 100),
-            BromideData("神宮寺レン",   R.drawable.dream, 200, 500, 100),
-            BromideData("来栖翔",       R.drawable.shine, 100, 200, 500),
-            BromideData("愛島セシル",   R.drawable.star,  500, 300, 400)
-    )
 
     var mListView: SortableListView? = null
 
